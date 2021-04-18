@@ -16,7 +16,7 @@ setNpmRegistry() {
   case $1 in
   'taobao')
     npm config set registry https://registry.npm.taobao.org
-    echo 'switch to taobao registry'
+    echo 'switch to taobao registry (https://registry.npm.taobao.org)'
     ;;
   'didi')
     npm config set registry http://npm.intra.xiaojukeji.com
@@ -24,12 +24,12 @@ setNpmRegistry() {
     ;;
   'npm')
     npm config set registry http://registry.npmjs.org
-    echo 'switch to npm registry'
+    echo 'switch to npm registry (http://registry.npmjs.org)'
     ;;
   *)
-    echo "setNpmRegistry taobao, set taobao registry"
+    echo "setNpmRegistry taobao, set taobao registry (https://registry.npm.taobao.org)"
     echo "setNpmRegistry didi, set didi registry (http://npm.intra.xiaojukeji.com)"
-    echo "setNpmRegistry npm, set npm registry"
+    echo "setNpmRegistry npm, set npm registry (http://registry.npmjs.org)"
     ;;
   esac
 }
