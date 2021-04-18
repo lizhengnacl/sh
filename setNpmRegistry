@@ -2,15 +2,36 @@
 
 # setNpmRegistry
 setNpmRegistry() {
-  # 接受函数入参
-  if [ $1 == 'taobao' ]
-  then
+  # 接受函数参数
+  #  if [ $1 == 'taobao' ]
+  #  then
+  #    npm config set registry https://registry.npm.taobao.org
+  #    echo 'switch to taobao registry'
+  #  else
+  #    npm config set registry http://npm.intra.xiaojukeji.com
+  #    echo 'switch to didi registry'
+  #  fi
+
+  # 接受函数参数
+  case $1 in
+  'taobao')
     npm config set registry https://registry.npm.taobao.org
     echo 'switch to taobao registry'
-  else
+    ;;
+  'didi')
     npm config set registry http://npm.intra.xiaojukeji.com
-    echo 'switch to didi registry'
-  fi
+    echo 'switch to didi registry (http://npm.intra.xiaojukeji.com)'
+    ;;
+  'npm')
+    npm config set registry http://registry.npmjs.org
+    echo 'switch to npm registry'
+    ;;
+  *)
+    echo "setNpmRegistry taobao, set taobao registry"
+    echo "setNpmRegistry didi, set didi registry (http://npm.intra.xiaojukeji.com)"
+    echo "setNpmRegistry npm, set npm registry"
+    ;;
+  esac
 }
 
 # 接受命令行参数
