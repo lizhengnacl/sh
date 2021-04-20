@@ -16,6 +16,8 @@ chmod +x setNpmRegistry
 
 根据实际路径设置
 ```
+vim ~/.zshrc
+
 export PATH=$PATH:~/sh
 ```
 
