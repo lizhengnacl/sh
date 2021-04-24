@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+cheatSheet() {
+  type=$1
+  case $type in
+  'gitName')
+    ./setGitName $2
+    ;;
+  'npmRegistry')
+    ./setNpmRegistry $2
+    ;;
+  *)
+    echo "cheatSheet gitName"
+    echo "cheatSheet npmRegistry"
+    ;;
+  esac
+}
+
+# 接受命令行参数
+cheatSheet $1 $2
