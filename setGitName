@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+# setGitName
+setGitName() {
+  # 接受函数参数
+  case $1 in
+  'github')
+    git config --global user.name "lizhengnacl"
+    git config --global user.email "lizhengnacl@163.com"
+    echo "user.email=lizhengnacl@163.com"
+    echo "user.name=lizhengnacl"
+    ;;
+  'didi')
+    git config --global user.name "lizhengnacl"
+    git config --global user.email "lizhengnacl@didiglobal.com"
+    echo "user.email=lizhengnacl@didiglobal.com"
+    echo "user.name=lizhengnacl"
+    ;;
+  *)
+    echo "setGitName github"
+    echo "setGitName didi"
+    ;;
+  esac
+}
+
+# 接受命令行参数
+setGitName $1
