@@ -16,14 +16,17 @@ setNpmRegistry() {
   case $1 in
   'taobao')
     npm config set registry https://registry.npm.taobao.org
+    yarn config set registry https://registry.npm.taobao.org
     echo 'switch to taobao registry (https://registry.npm.taobao.org)'
     ;;
   'didi')
     npm config set registry http://npm.intra.xiaojukeji.com
+    yarn config set registry http://npm.intra.xiaojukeji.com
     echo 'switch to didi registry (http://npm.intra.xiaojukeji.com)'
     ;;
   'npm')
     npm config set registry http://registry.npmjs.org
+    yarn config set registry http://registry.npmjs.org
     echo 'switch to npm registry (http://registry.npmjs.org)'
     ;;
   *)
