@@ -7,7 +7,7 @@ FUNCTIONS_DIR="$HOME/sh/functions"
 if [ -d "$FUNCTIONS_DIR" ]; then
     # 添加functions目录到PATH
     if [[ ":$PATH:" != *":$FUNCTIONS_DIR:"* ]]; then
-        export PATH="$FUNCTIONS_DIR:$PATH"
+        export PATH="$FUNCTIONS_DIR/lib:$PATH"
         echo "Functions directory added to PATH"
     else
         echo "Functions directory already in PATH"
