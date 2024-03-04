@@ -14,7 +14,7 @@ if [ -d "$FUNCTIONS_DIR" ]; then
     fi
 
     # 执行同级目录下的autoload.sh
-    autoload_script="$(dirname "$0")/autoload.sh"
+    autoload_script="$FUNCTIONS_DIR/autoload.sh"
     if [ -f "$autoload_script" ]; then
         source "$autoload_script"
         echo "autoload.sh executed"
@@ -23,8 +23,8 @@ if [ -d "$FUNCTIONS_DIR" ]; then
     fi
 
     # 添加脚本到.bashrc
-    if ! grep -q "source $PWD/install_functions.sh" ~/.bashrc; then
-        echo "source $PWD/install_functions.sh" >> ~/.bashrc
+    if ! grep -q "source $FUNCTIONS_DIR/install_functions.sh" ~/.bashrc; then
+        echo "source $FUNCTIONS_DIR/install_functions.sh" >> ~/.bashrc
         echo "install_functions.sh added to .bashrc"
     else
         echo "install_functions.sh already in .bashrc"
