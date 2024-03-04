@@ -5,3 +5,4 @@
     br = branch
     df = diff
     lg = log --oneline --decorate --all --graph
+    last = log -1 HEAD
