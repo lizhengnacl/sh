@@ -34,4 +34,4 @@ export PATH=$PATH:~/sh
 2. 运行命令 `sh $HOME/sh/alias/install_git_alias.sh`
 
 #### 新增
-修改`alias/.gitconfig-alias`文件，alias会立即生效
+修改`$HOME/sh/alias/.gitconfig-alias`文件，alias会立即生效
