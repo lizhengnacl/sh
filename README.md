@@ -31,7 +31,7 @@ export PATH=$PATH:~/sh
 #### 安装
 
 1. 将仓库`clone`到根目录`$HOME`下
-2. 运行命令 `sh alias/install_git_alias.sh`
+2. 运行命令 `sh $HOME/sh/alias/install_git_alias.sh`
 
 #### 新增
 修改`alias/.gitconfig-alias`文件，alias会立即生效
