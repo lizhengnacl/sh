@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'a'
-
 # 获取提交中所有新增的文件
 files=$(git diff --cached --name-only --diff-filter=A)
 
