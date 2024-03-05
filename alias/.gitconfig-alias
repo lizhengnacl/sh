@@ -6,3 +6,4 @@
     df = diff
     lg = log --oneline --decorate --all --graph
     last = log -1 HEAD
+    cac = commit -a -m
