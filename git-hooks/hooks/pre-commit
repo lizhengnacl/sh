@@ -3,10 +3,28 @@
 hooks_scripts_path=$(dirname $(readlink -f "$0"))/
 # echo "路径是: $hooks_scripts_path"
 
-# 遍历指定路径下的所有脚本文件，剔除名称为pre-commit的脚本
-for script_file in "$hooks_scripts_path"*; do
-    if [ -f "$script_file" ] && [ "$(basename "$script_file")" != "pre-commit" ]; then
-        # echo "执行脚本: $script_file"
-        source "$script_file"
+# Set a flag to track if any script fails
+failed=false
+
+# Function to handle script execution
+execute_script() {
+    if [ -f "$1" ] && [ "$(basename "$1")" != "pre-commit" ]; then
+        # echo "执行脚本: $1"
+        source "$1"
+        if [ $? -ne 0 ]; then
+            failed=true
+        fi
     fi
+}
+
+# Iterate through scripts and execute them
+for script_file in "$hooks_scripts_path"*; do
+    echo "execute_script: $script_file"
+    execute_script "$script_file"
 done
+
+# Exit with an error if any script failed
+if [ "$failed" = true ]; then
+    echo 'failed'
+    exit 1
+fi

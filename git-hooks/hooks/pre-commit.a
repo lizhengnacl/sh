@@ -1,3 +1,25 @@
 #!/bin/bash
 
 echo 'a'
+
+# 获取提交中所有新增的文件
+files=$(git diff --cached --name-only --diff-filter=A)
+
+# 遍历每个新增的文件
+for file in $files
+do
+    echo $file
+    # 获取文件大小（以字节为单位）
+    file_size=$(wc -c < "$file")
+
+    # 将文件大小转换为 MB
+    file_size_mb=$(echo "scale=2; $file_size / 1024 / 1024" | bc)
+
+    # 检查文件大小是否大于 10MB
+    if (( $(echo "$file_size_mb > 1" | bc -l) )); then
+        echo "Error: File $file is larger than 10MB. Please remove or reduce the file size before committing."
+        exit 1  # 终止提交
+    fi
+done
+
+exit 0
