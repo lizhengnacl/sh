@@ -1,0 +1,12 @@
+#!/bin/bash
+
+hooks_scripts_path=$(dirname $(readlink -f "$0"))/
+# echo "路径是: $hooks_scripts_path"
+
+# 遍历指定路径下的所有脚本文件，剔除名称为pre-commit的脚本
+for script_file in "$hooks_scripts_path"*; do
+    if [ -f "$script_file" ] && [ "$(basename "$script_file")" != "pre-commit" ]; then
+        # echo "执行脚本: $script_file"
+        source "$script_file"
+    fi
+done

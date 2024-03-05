@@ -33,3 +33,10 @@ export PATH=$PATH:~/sh
 #### 参考文档
 
 - [30 Bash Script Examples](https://linuxhint.com/30_bash_script_examples/)
+
+
+### 添加hook
+```
+sh /path/to/repo/git-hooks/install.sh
+sh /path/to/repo/git-hooks/uninstall.sh
+```

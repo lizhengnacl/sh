@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Path to the hooks repository
-HOOKS_REPO_PATH="/Users/didi/sh/git-hooks/hooks"
+current_file_absolut_path=$(readlink -f "$0")
+HOOKS_REPO_PATH=$(dirname $current_file_absolut_path)/hooks/
+#echo "HOOKS_REPO_PATH: $HOOKS_REPO_PATH"
 
 # Function to install hook scripts
 uninstall_hooks() {
@@ -9,8 +11,10 @@ uninstall_hooks() {
     do
         if [ -f "$hook_script" ]; then
             hook_name=$(basename "$hook_script")
-            rm "$PWD/.git/hooks/$hook_name"
-            echo "uninstall $hook_name hook script."
+            if [ "$hook_name" = "pre-commit" ]; then
+                rm "$PWD/.git/hooks/$hook_name"
+                echo "uninstall $hook_name hook script."
+            fi
         fi
     done
 }
