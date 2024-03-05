@@ -23,11 +23,11 @@ if [ -d "$FUNCTIONS_DIR" ]; then
     fi
 
     # 添加脚本到.bashrc
-    if ! grep -q "source $FUNCTIONS_DIR/install_functions.sh" ~/.bashrc; then
-        echo "source $FUNCTIONS_DIR/install_functions.sh" >> ~/.bashrc
-        echo "install_functions.sh added to .bashrc"
+    if ! grep -q "source $FUNCTIONS_DIR/install.sh" ~/.bashrc; then
+        echo "source $FUNCTIONS_DIR/install.sh" >> ~/.bashrc
+        echo "install.sh added to .bashrc"
     else
-        echo "install_functions.sh already in .bashrc"
+        echo "install.sh already in .bashrc"
     fi
 else
     echo "Functions directory not found"
