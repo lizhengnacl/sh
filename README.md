@@ -50,3 +50,9 @@ sh /path/to/repo/git-hooks/uninstall.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh)"
 sh -c "$(wget https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh -O -)"
 ```
+
+安装alias
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lizhengnacl/sh/master/set-alias.sh)"
+sh -c "$(wget https://raw.githubusercontent.com/lizhengnacl/sh/master/set-alias.sh -O -)"
+```
