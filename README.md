@@ -47,5 +47,6 @@ sh /path/to/repo/git-hooks/uninstall.sh
 
 生成github ssh
 ```
-https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh)"
+sh -c "$(wget https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh -O -)"
 ```
