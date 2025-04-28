@@ -1,15 +1,9 @@
 #!/bin/bash
 
 # 定义要添加的内容（可修改）
-CUSTOM_CONFIG='
-alias test="ls -alFh"
-alias ll="ls -la"
-alias gs="git status"
-alias gp="git pull
-alias gcm="git ac"
-alias pwd="pwd | pbcopy"
-alias idea="open -a webstorm"
-'
+CUSTOM_CONFIG="
+alias ll='ls -la'
+"
 
 # 检查.bashrc文件是否存在
 TARGET_FILE="$HOME/.bashrc"
