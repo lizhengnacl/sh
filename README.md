@@ -40,3 +40,12 @@ export PATH=$PATH:~/sh
 sh /path/to/repo/git-hooks/install.sh
 sh /path/to/repo/git-hooks/uninstall.sh
 ```
+
+
+
+### 远程安装 
+
+生成github ssh
+```
+https://raw.githubusercontent.com/lizhengnacl/sh/master/generate-github-ssh.sh
+```
